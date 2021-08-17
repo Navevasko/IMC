@@ -7,6 +7,7 @@ function imc () {
     const txtPeso = document.getElementById("peso").value
     const resultado = document.getElementById("resultado")
     
+    if (txtNome !== '' && txtAltura !== '' && txtPeso !== '') {
         const valorIMC = (txtPeso / (txtAltura * txtAltura)).toFixed(1) // Execução do cálculo usando .toFixed() para controlar as casas deciamis.
         
         let classificacao = '' 
@@ -27,6 +28,9 @@ function imc () {
         
         resultado.textContent = `${txtNome} seu IMC é ${valorIMC} você está ${classificacao}`  
     
+    }else {
+        resultado.textContent = 'É obrigatório preencher todos os campos'
+    }
 }
 
 calcular.addEventListener('click', imc) 
