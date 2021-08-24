@@ -1,0 +1,172 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-destaque:#FCC91C;
+}
+
+.azul {
+    color: blue;
+}
+
+.vermelho {
+    color: red;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background-image: url(img/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    background-color: #000A;
+    background-blend-mode: darken;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+h1 {
+    color: whitesmoke;
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+}
+
+section {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.categorias table {
+    font-size: 1.5rem;
+    border-spacing: 4px;
+}
+
+.categorias th{
+    height: 50px;
+    width: 500px;
+    border-radius: 5px;
+    background-color: var(--cor-destaque);
+}
+
+.categorias td{
+    height: 50px;
+    width: 250px;
+    border-radius: 5px;
+    background-color: var(--cor-destaque);
+    padding-left: 10px;
+    font-weight: 300;
+}
+
+
+.calculadora form {
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    width: 250px;
+}
+
+.calculadora label {
+    color:white;
+}
+
+.calculadora .campo{
+    display: flex;
+    flex-direction: column;
+    position:relative;
+}
+
+.calculadora .campo.unidade::before{
+    height: 50px;
+    width: 60px;
+    content: attr(data-unidade);
+    background-color: var(--cor-destaque);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 5px 5px 0;
+}
+
+.calculadora input {
+    height: 50px;
+    border: var(--cor-destaque) solid 1px;
+    background-color: transparent;
+    outline: none;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight:bold;
+}
+
+.calculadora button {
+    height: 50px;
+    background-color: var(--cor-destaque);
+    border-radius: 5px;
+    border: var(--cor-destaque) solid 1px;
+    font-size: 1rem;
+}
+
+.calculadora #resultado {
+    height: 100px;
+    background-color: var(--cor-destaque);
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+footer {
+    height: 40px;
+    color: white;
+    font-style: italic;
+    text-align: center;
+    font-size: 0.8rem;;
+}
+
+
+@media (max-width:768px) {
+    
+    body {
+        height: 150vh;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    section {
+        height: 55vh;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .calculadora form {
+        width: 80%;
+    }
+}
